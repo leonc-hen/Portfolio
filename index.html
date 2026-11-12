@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -402,7 +402,7 @@ var PROJECTS=[
  role:'Mechanical Design, Drive Lead',dates:'Sept 2024 to May 2026',tools:'Onshape, SolidWorks, CAD, 3D printing',
  result:'18th in qualification and a peak of #12 in driver controlled points at the 2026 World Championships',
  facts:[['Team','Furious Frogs, FTC #26025'],['Drivetrain','Mecanum, four drive motors'],['Odometry','goBILDA Pinpoint with two tracking pods'],['Final season','DECODE (2025 to 2026)'],['Competition','2026 FTC World Championships']],
- videos:[{src:'video-172_singular_display.MOV',caption:'Match footage from the 2026 World Championships'},{src:'IMG_4010.MOV',caption:'Robot performance'}],
+ videos:[{src:'worlds-match.mp4',caption:'Match footage from the 2026 World Championships'},{src:'robot-performance.mp4',caption:'Robot performance'}],
  links:[['Instagram','https://www.instagram.com/furiousfrogs/'],['Website','https://www.furiousfrogs.org/']]},
 
 {id:'vision',t:'robotics software',tags:'Robotics, Software',title:'Autonomous vision and navigation',img:'ENGINEERING PORTFOLIO 131 (1).jpg',
@@ -506,7 +506,7 @@ var BLURB={all:'Four current projects across mechanical design, electronics, and
     if(!v.src)return '<figure class="vid empty"><div class="frame">'+PLAY+'<span>Video coming soon</span></div><figcaption>'+v.caption+'</figcaption></figure>';
     var yt=v.src.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
     var inner=yt?'<iframe src="https://www.youtube-nocookie.com/embed/'+yt[1]+'" title="'+esc(v.caption)+'" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-      :'<video controls preload="metadata" playsinline'+(v.poster?' poster="'+v.poster+'"':'')+'><source src="'+v.src+'"></video>';
+      :'<video controls preload="metadata" playsinline'+(v.poster?' poster="'+v.poster+'"':'')+'><source src="'+v.src+'"'+(/\.mp4$/i.test(v.src)?' type="video/mp4"':'')+'>Your browser can’t play this video. <a href="'+v.src+'">Download it</a>.</video>';
     return '<figure class="vid"><div class="frame">'+inner+'</div><figcaption>'+v.caption+'</figcaption></figure>';
   }
   function videos(p){
